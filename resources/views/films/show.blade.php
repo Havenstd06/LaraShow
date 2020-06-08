@@ -5,7 +5,7 @@
     <div class="items-center lg:flex">
       <div class="flex-none">
         @if ($film['poster_path'])
-        <img src="{{ 'https://image.tmdb.org/t/p/w500/' . $film['poster_path'] }}" alt="Affiche" class="w-64 rounded lg:w-96">
+        <img src="{{ $film['poster_path'] }}" alt="Affiche" class="w-64 rounded lg:w-96">
         @else
         <img src="https://via.placeholder.com/500x750" alt="Affiche" class="w-64 rounded lg:w-96">
         @endif
@@ -17,45 +17,39 @@
         <div class="flex items-center">
             <img src="https://limg.app/i/HomelyHoopoe-AustralianVegetarianSchool-4UDdt8.png" alt="Étoile" class="mr-2">
             <span class="mr-2 font-medium text-gray-800">
-              {{ $film['vote_average'] ? $film['vote_average'] . '/10' : 'NR' }}
+              {{ $film['vote_average'] }}
             </span>
             <span class="pl-2 font-medium text-gray-800 border-l-2 border-gray-900">
-              {{ \Carbon\Carbon::parse($film['release_date'])->format('d M, Y') }}
+              {{ $film['release_date'] }}
             </span>
             <span class="pl-2 ml-2 font-medium text-gray-800 border-l-2 border-gray-900">
-              {{ $film['runtime'] ? $film['runtime'] . ' minutes' : '' }}
+              {{ $film['runtime'] }}
             </span>
         </div>
         <div class="text-sm font-medium">
           <span class="text-gray-600">Genre</span>
-            @foreach ($film['genres'] as $genre)
-                {{ $genre['name'] }}@if (!$loop->last), @endif
-            @endforeach
+            {{ $film['genres'] }}
         </div>
         <div class="text-sm font-medium">
           <span class="text-gray-600">De</span>
-          @foreach ($film['credits']['crew'] as $crew)
-            @if ($crew['job'] == 'Director')
-                <a href="#">{{ $crew['name'] }}</a>
-            @endif
+          @foreach ($film['director'] as $crew)
+              {{ $crew['name'] }}
           @endforeach
         </div>
         <div class="text-sm font-medium">
           <span class="text-gray-600">Avec</span>
-          @foreach ($film['credits']['cast'] as $cast)
-            @if ($loop->index < 3)
-                <a href="#">{{ $cast['name'] }}</a>,
-            @endif
+          @foreach ($film['castText'] as $cast)
+              <a href="#">{{ $cast['name'] }}</a>@if (!$loop->last), @endif
           @endforeach
         </div>
         <div class="text-sm font-medium">
-          <span class="text-gray-600">Langue(s) original</span>
+          <span class="text-gray-600">Langues</span>
           @foreach ($film['spoken_languages'] as $lang)
               {{ $lang['name'] }}@if (!$loop->last), @endif
           @endforeach
         </div>
         <div class="mt-10">
-          <p>{{ $film['overview'] ? $film['overview'] : $filmEn['overview'] }}</p>
+          <p>{{ $film['overview'] }}</p>
         </div>
         @if (count($film['videos']['results']) > 0)
           <div x-data="{ open: false }" class="z-50">
@@ -89,20 +83,18 @@
 <div class="container z-10 mx-auto">
   <h2 class="text-2xl font-bold tracking-wider text-gray-900">Acteurs</h2>
   <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
-    @foreach ($film['credits']['cast'] as $cast)
-      @if ($loop->index < 5)
-          <div class="mt-5">
-            <a href="#">
-              @if ($cast['profile_path'])
-              <img src="{{ 'https://image.tmdb.org/t/p/w300/' . $cast['profile_path'] }}" alt="{{ $cast['name'] }}" class="z-10 duration-150 ease-in transform rounded hover:opacity-75">
-              @else
-              <img src="https://via.placeholder.com/300x450" class="z-10 duration-150 ease-in transform rounded hover:opacity-75">
-              @endif
-              <h3 class="mt-1 text-lg font-medium text-gray-800">{{ $cast['name'] }}</h3>
-              <h4 class="text-gray-800">{{ $cast['character'] }}</h4>
-            </a>
-          </div>
-      @endif
+    @foreach ($film['castImage'] as $cast)
+      <div class="mt-5">
+        <a href="#">
+          @if ($cast['profile_path'])
+          <img src="{{ 'https://image.tmdb.org/t/p/w300/' . $cast['profile_path'] }}" alt="{{ $cast['name'] }}" class="z-10 duration-150 ease-in transform rounded hover:opacity-75">
+          @else
+          <img src="https://via.placeholder.com/300x450" class="z-10 duration-150 ease-in transform rounded hover:opacity-75">
+          @endif
+          <h3 class="mt-1 text-lg font-medium text-gray-800">{{ $cast['name'] }}</h3>
+          <h4 class="text-gray-800">{{ $cast['character'] }}</h4>
+        </a>
+      </div>
     @endforeach
   </div>
 </div>
@@ -110,15 +102,13 @@
 <div class="container mx-auto mb-5" x-data="{ open: false, image: '' }">
   <h2 class="text-2xl font-bold tracking-wider text-gray-900">Images</h2>
   <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
-    @foreach ($filmEn['images']['backdrops'] as $image)
-      @if ($loop->index < 9)
-          <div class="mt-5 cursor-pointer" 
-          @click.prevent="
-          open = true 
-          image='{{ 'https://image.tmdb.org/t/p/original/' . $image['file_path'] }}'">
-            <img src="{{ 'https://image.tmdb.org/t/p/w500/' . $image['file_path'] }}" class="duration-150 ease-in transform hover:opacity-75">
-          </div>
-      @endif
+    @foreach ($film['images'] as $image)
+      <div class="mt-5 cursor-pointer" 
+        @click.prevent="
+        open = true 
+        image='{{ 'https://image.tmdb.org/t/p/original/' . $image['file_path'] }}'">
+        <img src="{{ 'https://image.tmdb.org/t/p/w500/' . $image['file_path'] }}" class="duration-150 ease-in transform hover:opacity-75">
+      </div>
     @endforeach
   </div>
   <div class="z-50" x-show="open">
