@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'ViewController@films')->name('films');
-Route::get('/series', 'ViewController@series')->name('series');
-Route::get('/acteurs', 'ViewController@acteurs')->name('acteurs');
+Route::get('/', 'FilmController@films')->name('films');
+Route::get('/films/{film}', 'FilmController@show')->name('films.show');
+
+Route::get('/series', 'SerieController@series')->name('series');
+// Route::get('/series/show', 'SerieController@show')->name('films.show');

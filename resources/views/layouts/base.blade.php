@@ -16,6 +16,7 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+        @livewireStyles
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -23,7 +24,7 @@
 
     <body>
         @yield('body')
-
+        @livewireScripts
         <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>

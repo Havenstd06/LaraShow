@@ -898,261 +898,6 @@ input:invalid, textarea:invalid, select:invalid {
   border-color: transparent;
 }
 
-.form-input {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: #ffffff;
-  border-color: #d2d6dc;
-  border-width: 1px;
-  border-radius: 0.375rem;
-  padding-top: 0.5rem;
-  padding-right: 0.75rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.form-input::-moz-placeholder {
-  color: #9fa6b2;
-  opacity: 1;
-}
-
-.form-input:-ms-input-placeholder {
-  color: #9fa6b2;
-  opacity: 1;
-}
-
-.form-input::-ms-input-placeholder {
-  color: #9fa6b2;
-  opacity: 1;
-}
-
-.form-input::placeholder {
-  color: #9fa6b2;
-  opacity: 1;
-}
-
-.form-input:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(164, 202, 254, 0.45);
-  border-color: #a4cafe;
-}
-
-.form-textarea {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: #ffffff;
-  border-color: #d2d6dc;
-  border-width: 1px;
-  border-radius: 0.375rem;
-  padding-top: 0.5rem;
-  padding-right: 0.75rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.form-textarea::-moz-placeholder {
-  color: #9fa6b2;
-  opacity: 1;
-}
-
-.form-textarea:-ms-input-placeholder {
-  color: #9fa6b2;
-  opacity: 1;
-}
-
-.form-textarea::-ms-input-placeholder {
-  color: #9fa6b2;
-  opacity: 1;
-}
-
-.form-textarea::placeholder {
-  color: #9fa6b2;
-  opacity: 1;
-}
-
-.form-textarea:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(164, 202, 254, 0.45);
-  border-color: #a4cafe;
-}
-
-.form-multiselect {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: #ffffff;
-  border-color: #d2d6dc;
-  border-width: 1px;
-  border-radius: 0.375rem;
-  padding-top: 0.5rem;
-  padding-right: 0.75rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.form-multiselect:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(164, 202, 254, 0.45);
-  border-color: #a4cafe;
-}
-
-.form-select {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3e%3cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  -webkit-print-color-adjust: exact;
-          color-adjust: exact;
-  background-repeat: no-repeat;
-  background-color: #ffffff;
-  border-color: #d2d6dc;
-  border-width: 1px;
-  border-radius: 0.375rem;
-  padding-top: 0.5rem;
-  padding-right: 2.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-position: right 0.5rem center;
-  background-size: 1.5em 1.5em;
-}
-
-.form-select::-ms-expand {
-  color: #9fa6b2;
-  border: none;
-}
-
-@media not print {
-  .form-select::-ms-expand {
-    display: none;
-  }
-}
-
-@media print and (-ms-high-contrast: active), print and (-ms-high-contrast: none) {
-  .form-select {
-    padding-right: 0.75rem;
-  }
-}
-
-.form-select:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(164, 202, 254, 0.45);
-  border-color: #a4cafe;
-}
-
-.form-checkbox {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  -webkit-print-color-adjust: exact;
-          color-adjust: exact;
-  display: inline-block;
-  vertical-align: middle;
-  background-origin: border-box;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  flex-shrink: 0;
-  height: 1rem;
-  width: 1rem;
-  color: #3f83f8;
-  background-color: #ffffff;
-  border-color: #d2d6dc;
-  border-width: 1px;
-  border-radius: 0.25rem;
-}
-
-.form-checkbox:checked {
-  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
-  border-color: transparent;
-  background-color: currentColor;
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-@media not print {
-  .form-checkbox::-ms-check {
-    border-width: 1px;
-    color: transparent;
-    background: inherit;
-    border-color: inherit;
-    border-radius: inherit;
-  }
-}
-
-.form-checkbox:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(164, 202, 254, 0.45);
-  border-color: #a4cafe;
-}
-
-.form-checkbox:checked:focus {
-  border-color: transparent;
-}
-
-.form-radio {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  -webkit-print-color-adjust: exact;
-          color-adjust: exact;
-  display: inline-block;
-  vertical-align: middle;
-  background-origin: border-box;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  flex-shrink: 0;
-  border-radius: 100%;
-  height: 1rem;
-  width: 1rem;
-  color: #3f83f8;
-  background-color: #ffffff;
-  border-color: #d2d6dc;
-  border-width: 1px;
-}
-
-.form-radio:checked {
-  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
-  border-color: transparent;
-  background-color: currentColor;
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-@media not print {
-  .form-radio::-ms-check {
-    border-width: 1px;
-    color: transparent;
-    background: inherit;
-    border-color: inherit;
-    border-radius: inherit;
-  }
-}
-
-.form-radio:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(164, 202, 254, 0.45);
-  border-color: #a4cafe;
-}
-
-.form-radio:checked:focus {
-  border-color: transparent;
-}
-
 /**
  * Here you would add any of your custom component classes; stuff that you'd
  * want loaded *before* the utilities so that the utilities could still
@@ -36947,6 +36692,48 @@ input:invalid, textarea:invalid, select:invalid {
   transition-delay: 1000ms;
 }
 
+.spinner {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.spinner::after {
+  content: '';
+  position: absolute !important;
+  top: calc(50% - (2em / 2));
+  left: calc(50% - (2em / 2));
+  display: block;
+  width: 2em;
+  height: 2em;
+  border: 2px solid #252F3E;
+  border-radius: 9999px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  -webkit-animation: spinAround 500ms infinite linear;
+          animation: spinAround 500ms infinite linear;
+}
+
+@-webkit-keyframes spinAround {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /**
  * Here you would add any custom utilities you need that don't come out of the
  * box with Tailwind.
@@ -36956,6 +36743,10 @@ input:invalid, textarea:invalid, select:invalid {
  * .bg-pattern-graph-paper { ... }
  * .skew-45 { ... }
  */
+
+.spinner {
+  position: absolute;
+}
 
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
@@ -72734,6 +72525,28 @@ input:invalid, textarea:invalid, select:invalid {
 
   .sm\:delay-1000 {
     transition-delay: 1000ms;
+  }
+
+  .sm\:spinner {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+  }
+
+  .sm\:spinner::after {
+    content: '';
+    position: absolute !important;
+    top: calc(50% - (2em / 2));
+    left: calc(50% - (2em / 2));
+    display: block;
+    width: 2em;
+    height: 2em;
+    border: 2px solid #252F3E;
+    border-radius: 9999px;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    -webkit-animation: spinAround 500ms infinite linear;
+            animation: spinAround 500ms infinite linear;
   }
 }
 
@@ -108515,6 +108328,28 @@ input:invalid, textarea:invalid, select:invalid {
   .md\:delay-1000 {
     transition-delay: 1000ms;
   }
+
+  .md\:spinner {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+  }
+
+  .md\:spinner::after {
+    content: '';
+    position: absolute !important;
+    top: calc(50% - (2em / 2));
+    left: calc(50% - (2em / 2));
+    display: block;
+    width: 2em;
+    height: 2em;
+    border: 2px solid #252F3E;
+    border-radius: 9999px;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    -webkit-animation: spinAround 500ms infinite linear;
+            animation: spinAround 500ms infinite linear;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -144295,6 +144130,28 @@ input:invalid, textarea:invalid, select:invalid {
   .lg\:delay-1000 {
     transition-delay: 1000ms;
   }
+
+  .lg\:spinner {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+  }
+
+  .lg\:spinner::after {
+    content: '';
+    position: absolute !important;
+    top: calc(50% - (2em / 2));
+    left: calc(50% - (2em / 2));
+    display: block;
+    width: 2em;
+    height: 2em;
+    border: 2px solid #252F3E;
+    border-radius: 9999px;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    -webkit-animation: spinAround 500ms infinite linear;
+            animation: spinAround 500ms infinite linear;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -180074,5 +179931,27 @@ input:invalid, textarea:invalid, select:invalid {
 
   .xl\:delay-1000 {
     transition-delay: 1000ms;
+  }
+
+  .xl\:spinner {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+  }
+
+  .xl\:spinner::after {
+    content: '';
+    position: absolute !important;
+    top: calc(50% - (2em / 2));
+    left: calc(50% - (2em / 2));
+    display: block;
+    width: 2em;
+    height: 2em;
+    border: 2px solid #252F3E;
+    border-radius: 9999px;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    -webkit-animation: spinAround 500ms infinite linear;
+            animation: spinAround 500ms infinite linear;
   }
 }
