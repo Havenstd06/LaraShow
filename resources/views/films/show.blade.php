@@ -67,20 +67,14 @@
               </span>
 
             <div class="z-50" x-show="open">
-            <div x-show="open" x-description="Background overlay, show/hide based on modal state." x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-30 transition-opacity">
-              <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-            </div>
+              <div x-show="open" x-description="Background overlay, show/hide based on modal state." x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-30 transition-opacity">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+              </div>
               <div class="fixed top-0 left-0 z-50 flex items-center w-full h-full overflow-y-auto shadow-lg">
                   <div class="container mx-auto overflow-y-auto rounded-lg lg:px-32">
-                      <div class="bg-gray-900 rounded">
-                          <div class="flex justify-end pt-2 pr-4">
-                              <button @click="open = false" @keydown.escape.window="open = false" @click.away="open = false" class="text-3xl leading-none text-gray-50 hover:text-gray-100 focus:outline-none">&times;
-                              </button>
-                          </div>
-                          <div class="px-8 py-8 modal-body">
-                              <div class="relative overflow-hidden responsive-container" style="padding-top: 56.25%">
-                                  <iframe class="absolute top-0 left-0 w-full h-full responsive-iframe" src="https://www.youtube.com/embed/{{ $film['videos']['results'][0]['key'] }}" style="border:0;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                              </div>
+                      <div class="rounded bg-gray-50" @keydown.escape.window="open = false" @click.away="open = false" >
+                          <div class="relative overflow-hidden responsive-container" style="padding-top: 56.25%">
+                              <iframe class="absolute top-0 left-0 w-full h-full responsive-iframe" src="https://www.youtube.com/embed/{{ $film['videos']['results'][0]['key'] }}" style="border:0;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                           </div>
                       </div>
                   </div>
@@ -113,16 +107,36 @@
   </div>
 </div>
 <hr class="my-10">
-<div class="container mx-auto mb-5">
+<div class="container mx-auto mb-5" x-data="{ open: false, image: '' }">
   <h2 class="text-2xl font-bold tracking-wider text-gray-900">Images</h2>
   <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
     @foreach ($filmEn['images']['backdrops'] as $image)
       @if ($loop->index < 9)
-          <div class="mt-5">
+          <div class="mt-5 cursor-pointer" 
+          @click.prevent="
+          open = true 
+          image='{{ 'https://image.tmdb.org/t/p/original/' . $image['file_path'] }}'">
             <img src="{{ 'https://image.tmdb.org/t/p/w500/' . $image['file_path'] }}" class="duration-150 ease-in transform hover:opacity-75">
           </div>
       @endif
     @endforeach
+  </div>
+  <div class="z-50" x-show="open">
+    <div x-show="open" x-description="Background overlay, show/hide based on modal state." x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-30 transition-opacity">
+      <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+    </div>
+    <div class="fixed top-0 left-0 z-50 flex items-center w-full h-full overflow-y-auto shadow-lg">
+        <div class="container mx-auto overflow-y-auto rounded-lg lg:px-32">
+            <div class="rounded bg-gray-50" @keydown.escape.window="open = false" @click.away="open = false" >
+                <div class="relative h-full overflow-hidden responsive-container">
+                  <button @click="open = false" class="absolute right-0 mt-3 mr-3 bg-gray-900 rounded-full text-gray-50 focus:outline-none">
+                    <i class="p-2 fas fa-times fa-lg"></i>
+                  </button>
+                    <img :src="image" alt="poster">
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
 </div>
 @endsection
