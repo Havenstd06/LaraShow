@@ -17,7 +17,6 @@
 
 ## Installation
 * clone the repository: `git clone https://github.com/Havenstd06/LaraShow`
-* create a database
 * install: `composer install`
 * Set your `TMDB_TOKEN` in your `.env` file. You can get an API key [here](https://www.themoviedb.org/settings/api). Make sure to use the "API Read Access Token (v4 auth)" from the TMDb dashboard.
 * create configuration env file `.env` refer to `.env.example`
