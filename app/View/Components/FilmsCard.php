@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class FilmCard extends Component
+class FilmsCard extends Component
 {
     public $film;
     /**
@@ -24,6 +24,6 @@ class FilmCard extends Component
      */
     public function render()
     {
-        return view('components.film-card');
+        return view('components.films-card');
     }
 }

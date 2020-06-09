@@ -13,8 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route Films
 Route::get('/', 'FilmController@films')->name('films');
 Route::get('/films/{film}', 'FilmController@show')->name('films.show');
 
+// Route Séries
 Route::get('/series', 'SerieController@series')->name('series');
 // Route::get('/series/show', 'SerieController@show')->name('films.show');
+
+// Route Artistes
+Route::get('/artistes', 'ArtisteController@artistes')->name('artistes');
+Route::get('/artistes/page/{page?}', 'ArtisteController@artistes')->name('artiste.pagination');
+Route::get('/artistes/{artiste}', 'ArtisteControllerr@show')->name('artistes.show');

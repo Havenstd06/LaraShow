@@ -42,6 +42,16 @@
                 <svg aria-hidden="true" data-prefix="fas" data-icon="tv" class="w-6 h-6 mr-4 text-gray-400 transition duration-150 ease-in-out group-hover:text-gray-300 group-focus:text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M592 0H48A48 48 0 000 48v320a48 48 0 0048 48h240v32H112a16 16 0 00-16 16v32a16 16 0 0016 16h416a16 16 0 0016-16v-32a16 16 0 00-16-16H352v-32h240a48 48 0 0048-48V48a48 48 0 00-48-48zm-16 352H64V64h512z"/></svg>
                 Séries TV
               </a>
+              </a>
+              <a href="{{ route('artistes') }}" class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md transition ease-in-out duration-150 
+              @if (\Route::current()->getName() == 'artistes')  
+                 text-white bg-gray-900 focus:outline-none focus:bg-gray-700
+              @else
+                text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700
+              @endif">
+                <svg aria-hidden="true" data-prefix="far" data-icon="user" class="w-6 h-6 mr-4 text-gray-400 transition duration-150 ease-in-out group-hover:text-gray-300 group-focus:text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M314 304c-29 0-43 16-90 16s-61-16-90-16C60 304 0 364 0 438v26c0 27 22 48 48 48h352c27 0 48-21 48-48v-26c0-74-60-134-134-134zm86 160H48v-26c0-47 39-86 86-86 15 0 39 16 90 16 52 0 75-16 90-16 47 0 86 39 86 86v26zM224 288a144 144 0 100-288 144 144 0 000 288zm0-240a96 96 0 110 192 96 96 0 010-192z"/></svg>
+                Artistes
+              </a>
             </nav>
           </div>
         </div>
@@ -80,6 +90,16 @@
               @endif">
                 <svg aria-hidden="true" data-prefix="fas" data-icon="tv" class="w-6 h-6 mr-3 text-gray-400 transition duration-150 ease-in-out group-hover:text-gray-300 group-focus:text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M592 0H48A48 48 0 000 48v320a48 48 0 0048 48h240v32H112a16 16 0 00-16 16v32a16 16 0 0016 16h416a16 16 0 0016-16v-32a16 16 0 00-16-16H352v-32h240a48 48 0 0048-48V48a48 48 0 00-48-48zm-16 352H64V64h512z"/></svg>
                 Séries TV
+            </a>
+            </a>
+            <a href="{{ route('artistes') }}" class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium focus:bg-gray-700 transition ease-in-out duration-150
+              @if (\Route::current()->getName() == 'artistes')  
+                text-white rounded-md bg-gray-900 focus:outline-none
+              @else
+                text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white
+              @endif">
+                <svg aria-hidden="true" data-prefix="far" data-icon="user" class="w-6 h-6 mr-3 text-gray-400 transition duration-150 ease-in-out group-hover:text-gray-300 group-focus:text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M314 304c-29 0-43 16-90 16s-61-16-90-16C60 304 0 364 0 438v26c0 27 22 48 48 48h352c27 0 48-21 48-48v-26c0-74-60-134-134-134zm86 160H48v-26c0-47 39-86 86-86 15 0 39 16 90 16 52 0 75-16 90-16 47 0 86 39 86 86v26zM224 288a144 144 0 100-288 144 144 0 000 288zm0-240a96 96 0 110 192 96 96 0 010-192z"/></svg>
+                Artistes
             </a>
           </nav>
         </div>
