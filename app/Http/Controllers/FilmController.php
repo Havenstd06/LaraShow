@@ -35,12 +35,12 @@ class FilmController extends Controller
     public function show($id)
     {
         $film = Http::withToken(config('services.tmdb.token'))
-        ->get('https://api.themoviedb.org/3/movie/'.$id.'?language=fr&append_to_response=credits,videos,images')
-        ->json();
+            ->get('https://api.themoviedb.org/3/movie/'.$id.'?language=fr&append_to_response=credits,videos,images')
+            ->json();
 
         $filmEn = Http::withToken(config('services.tmdb.token'))
-        ->get('https://api.themoviedb.org/3/movie/'.$id.'?append_to_response=videos,images')
-        ->json();
+            ->get('https://api.themoviedb.org/3/movie/'.$id.'?append_to_response=videos,images')
+            ->json();
 
         $viewModel = new FilmViewModel(
             $film,

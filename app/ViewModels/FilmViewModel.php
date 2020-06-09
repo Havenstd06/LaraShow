@@ -7,8 +7,8 @@ use Spatie\ViewModels\ViewModel;
 
 class FilmViewModel extends ViewModel
 {
-    public $films;
-    public $filmsEn;
+    public $film;
+    public $filmEn;
 
     public function __construct($film, $filmEn)
     {

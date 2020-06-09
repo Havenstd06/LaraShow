@@ -38,7 +38,7 @@
                                         {{ $result['title'] }} (Film)
                                     </a>
                                 @elseif ($result['media_type'] == 'tv')
-                                    <a href="#" class="flex items-center w-full px-3 py-2 transition duration-150 ease-in-out">
+                                    <a href="{{ route('series.show', $result['id']) }}" class="flex items-center w-full px-3 py-2 transition duration-150 ease-in-out">
                                         @if ($result['poster_path'])
                                             <img src="https://image.tmdb.org/t/p/w92/{{ $result['poster_path'] }}" alt="poster" class="w-12 py-2 mr-3">
                                         @else
@@ -47,7 +47,7 @@
                                         {{ $result['name'] }} (Série)
                                     </a>
                                 @elseif ($result['media_type'] == 'person')
-                                    <a href="#" class="flex items-center w-full px-3 py-2 transition duration-150 ease-in-out">
+                                    <a href="{{ route('artistes.show', $result['id']) }}" class="flex items-center w-full px-3 py-2 transition duration-150 ease-in-out">
                                         @if ($result['profile_path'])
                                             <img src="https://image.tmdb.org/t/p/w92/{{ $result['profile_path'] }}" alt="poster" class="w-12 py-2 mr-3">
                                         @else

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ViewModels\ArtisteViewModel;
 use Illuminate\Support\Facades\Http;
 use App\ViewModels\ArtistesViewModel;
 
@@ -21,8 +22,29 @@ class ArtisteController extends Controller
             $page
         );
 
-        // dump($viewModel);
-
         return view('artiste.index', $viewModel);
+    }
+
+    public function show($id)
+    {
+        $artiste = Http::withToken(config('services.tmdb.token'))
+        ->get('https://api.themoviedb.org/3/person/'.$id.'?language=fr')
+        ->json();
+
+        $social = Http::withToken(config('services.tmdb.token'))
+            ->get('https://api.themoviedb.org/3/person/'.$id.'/external_ids?language=fr')
+            ->json();
+
+        $credits = Http::withToken(config('services.tmdb.token'))
+            ->get('https://api.themoviedb.org/3/person/'.$id.'/combined_credits?language=fr')
+            ->json();
+
+        $viewModel = new ArtisteViewModel(
+            $artiste,
+            $social,
+            $credits
+        );
+
+        return view('artiste.show', $viewModel);
     }
 }

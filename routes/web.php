@@ -19,9 +19,9 @@ Route::get('/films/{film}', 'FilmController@show')->name('films.show');
 
 // Route Séries
 Route::get('/series', 'SerieController@series')->name('series');
-// Route::get('/series/show', 'SerieController@show')->name('films.show');
+Route::get('/series/{serie}', 'SerieController@show')->name('series.show');
 
 // Route Artistes
 Route::get('/artistes', 'ArtisteController@artistes')->name('artistes');
 Route::get('/artistes/page/{page?}', 'ArtisteController@artistes')->name('artiste.pagination');
-Route::get('/artistes/{artiste}', 'ArtisteControllerr@show')->name('artistes.show');
+Route::get('/artistes/{artiste}', 'ArtisteController@show')->name('artistes.show');

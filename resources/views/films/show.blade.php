@@ -39,7 +39,7 @@
         <div class="text-sm font-medium">
           <span class="text-gray-600">Avec</span>
           @foreach ($film['castText'] as $cast)
-              <a href="#">{{ $cast['name'] }}</a>@if (!$loop->last), @endif
+              <a href="{{ route('artistes.show', $cast['id']) }}">{{ $cast['name'] }}</a>@if (!$loop->last), @endif
           @endforeach
         </div>
         <div class="text-sm font-medium">
@@ -85,7 +85,7 @@
   <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
     @foreach ($film['castImage'] as $cast)
       <div class="mt-5">
-        <a href="#">
+        <a href="{{ route('artistes.show', $cast['id']) }}">
           @if ($cast['profile_path'])
           <img src="{{ 'https://image.tmdb.org/t/p/w300/' . $cast['profile_path'] }}" alt="{{ $cast['name'] }}" class="z-10 duration-150 ease-in transform rounded hover:opacity-75">
           @else
