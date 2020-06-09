@@ -1,5 +1,5 @@
 # LaraShow
-## An open source image hosting service powered by Laravel
+## A Laravel project with the TMDB API
   
 <img src="https://limg.app/i/Brave-Boar-Fluffy-Zombie-Explorer-KvbFij.png/500">
   
